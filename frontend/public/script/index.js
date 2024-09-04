@@ -25,10 +25,8 @@ window.addEventListener('load', function() {
 
 
 // to work on hello message
-const HEADER = "Hello fellows, glad seeing you on my page"
-const AUTHOR = "I'm Abror, a student software developer"
 const DESC = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non purus sit amet risus posuere egestas. Integer ut augue nec felis ultrices interdum. Nullam et fringilla nulla. Cras bibendum metus a eros feugiat, eget vehicula est gravida. Donec tincidunt, ligula vel lacinia luctus, metus dolor aliquet felis, a condimentum tortor velit eu odio. Morbi nec libero et arcu pharetra bibendum. Vivamus vitae est ac sapien vestibulum hendrerit id sed erat. Fusce vitae ligula convallis, viverra nulla et, lacinia libero."
-this.document.getElementById('welcomeMessage').innerText = HEADER + '\n' + AUTHOR + '\n' + DESC;
+this.document.getElementById('welcomeMessage').innerHTML  += `<p id="desc">${DESC}</p>`;
 
 
 
@@ -39,5 +37,5 @@ function handleClick(socialMedia)
         window.open(links[socialMedia], '_blank');
     }
     // else case we know we need to work on smaller windows for those showcasings
-    
+
 }

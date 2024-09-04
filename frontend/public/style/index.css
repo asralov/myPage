@@ -80,6 +80,30 @@ body
     }
 }
 
+
+/* Animation for text to appear from left with fade in*/
+@keyframes leftFade {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes downFade {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 /* Animation class */
 .animate {
     animation: dropIn 0.5s forwards;
@@ -87,6 +111,32 @@ body
 
 #welcomeMessage
 {
-    width: 95%;
-    text-align: center;
+    width: 90%;
+    font-size: 3rem;
+    padding-left: 10%;
+    padding-top: 10vh;
+}
+
+#hello
+{
+    font-size: 2rem;
+    animation: leftFade 1s forwards;
+}
+#name
+{
+    font-size: 6rem;
+    font-weight: 700;
+    animation: leftFade 2s forwards;
+}
+#desc
+{
+    font-size: 1.4rem;
+    width: 50%;
+    margin-top: 10%;
+    animation: downFade 1s forwards;
+}
+#job
+{
+    animation: leftFade 2.5s forwards;
+    font-size: 1.5rem;
 }
