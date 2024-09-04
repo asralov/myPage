@@ -1,0 +1,40 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+        /* Sidebar styling */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 60px; /* Adjust width to your preference */
+            height: 100%;
+            background-color: #333; /* Dark background for sidebar */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        /* Button styling */
+        #sidebar button {
+            background-color: #555; /* Button background color */
+            color: white; /* Text color */
+            border: none;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100px; /* Width of the buttons */
+            height: 60px; /* Height of the buttons */
+            transform: rotate(-90deg); /* Rotate buttons 90 degrees */
+            transform-origin: center; /* Keep rotation around center */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Button hover effect */
+        #sidebar button:hover {
+            background-color: #777; /* Lighter shade on hover */
+        }
