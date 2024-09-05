@@ -4,6 +4,64 @@ links = {
     'github': "https://github.com/asralov"
 }
 
+const projects = [
+    {
+      name: "From Bud to Bloom",
+      description: "This is a 2D game that won the first place in a game jam where the topic was  \"Bloom Into A New\"",
+      tools: ["Unity", "Unity Version Control", "Photoshop", "C#"],
+      link: "#"
+    },
+    {
+      name: "Fishing Simulator 2D",
+      description: "DEFAULT",
+      tools: ["Unity", "Unity Version Control", "Photoshop", "C#"],
+      link: "#"
+    },
+    {
+      name: "Guessing Game",
+      description: "DEFAULT",
+      tools: ["Mars Simulator", "Assembly"],
+      link: "#"
+    },
+    {
+      name: "Trie Data Structure",
+      description: "DEFAULT",
+      tools: ["Java", "Git", "Gradle", "JUnit5"],
+      link:"#"
+    },
+    {
+        name: "Lose The Bias",
+        description: "DEFAULT",
+        tools: ["Python", "JavaScript", "HTML5", "CSS3", "MongoDB", "Express.js", "Digital Ocean", "Git"],
+        link:"#"
+    },
+    {
+      name: "English 108 - ePortfolio",
+      description: "DEFAULT",
+      tools: ["HTML5", "CSS3", "JavaScript", "Digital Ocean", "NodeJs", "ExpressJs"],
+      link:"#"
+    },
+    {
+        name: "Word Search Game",
+        description: "DEFAULT",
+        tools: ["Python"],
+        link:"#"
+    },
+    {
+        name: "Quadratic Solver",
+        description: "DEFAULT",
+        tools: ["Python"],
+        link:"#"
+    },
+    {
+        name: "Password Generator",
+        description: "DEFAULT",
+        tools: ["Python"],
+        link:"#"
+    },
+];
+
+
 window.addEventListener('load', function() {
     const buttons = document.querySelectorAll('#sidebar button');
     buttons.forEach((button, index) => {
@@ -21,6 +79,7 @@ window.addEventListener('load', function() {
     });
 
     document.getElementById('spinner-overlay').style.display = 'none';
+    this.generateProjectCards();
 });
 
 
@@ -54,9 +113,54 @@ function handleClick(socialMedia) {
     } else if (socialMedia === 'projects') {
         // Show the modal
         modal.style.display = 'flex';
+        
     }
 }
+/**
+ * 
+ */
+function generateProjectCards()
+{
+    const modalContent = document.querySelector('#cardBar');
 
+     // Loop through projects array and create cards
+     projects.forEach((project) => {
+        // Create a card container
+        const card = document.createElement('div');
+        card.classList.add('project-card');
+        
+        // Create the project name element
+        const projectName = document.createElement('h3');
+        projectName.textContent = project.name;
+        card.appendChild(projectName);
+        
+        // Create the project description element
+        const projectDescription = document.createElement('p');
+        projectDescription.textContent = project.description;
+        card.appendChild(projectDescription);
+        
+        // Create the tools section
+        const toolsList = document.createElement('ul');
+        project.tools.forEach((tool) => {
+            const toolItem = document.createElement('li');
+            toolItem.textContent = tool;
+            toolsList.appendChild(toolItem);
+        });
+        card.appendChild(toolsList);
+        
+        // Create the link to the source code (if available)
+        if (project.link) {
+            const projectLink = document.createElement('a');
+            projectLink.href = project.link;
+            projectLink.target = '_blank';
+            projectLink.textContent = 'View Source Code';
+            card.appendChild(projectLink);
+        }
+
+        // Append the card to the modal content
+        modalContent.appendChild(card);
+    });
+}
 /**
  * This is a function that handles when user clicks on resume button
  * that will create a temporary link object to download the resume
