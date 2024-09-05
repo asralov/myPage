@@ -84,7 +84,7 @@ body
 /* Animation for text to appear from left with fade in*/
 @keyframes leftFade {
     0% {
-        transform: translateX(-50px);
+        transform: translateX(-100px);
         opacity: 0;
     }
     100% {
@@ -126,17 +126,64 @@ body
 {
     font-size: 6rem;
     font-weight: 700;
-    animation: leftFade 2s forwards;
+    animation: leftFade 1.5s forwards;
 }
 #desc
 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     width: 50%;
-    margin-top: 10%;
+    margin-top: 5%;
     animation: downFade 1s forwards;
 }
 #job
 {
-    animation: leftFade 2.5s forwards;
+    animation: leftFade 1.5s forwards;
     font-size: 1.5rem;
 }
+@keyframes modalScaleIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Modal for pop up window for projects*/
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 9999; /* Ensure it is on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 5%;
+    border-radius: 5px;
+    width: 85vw !important; /* Adjust the size as needed */
+    height: 85vh;
+    position: relative;
+    text-align: center;
+    animation: modalScaleIn 0.5s forwards;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    
+}
+
