@@ -170,13 +170,17 @@ function handleClick(socialMedia) {
     } else if (socialMedia === 'resume') {
         // Handle resume download
         this.downloadResume();
+        var mediaQuery = window.matchMedia('(max-width: 700px)');
+        if (mediaQuery.matches)
+        {
+            document.querySelector('#burger').click();
+        }
     } else if (socialMedia === 'projects') {
         // Show the modal
         modal.style.display = 'flex';
         var mediaQuery = window.matchMedia('(max-width: 700px)');
         if (mediaQuery.matches)
         {
-            console.log('click')
             document.querySelector('#burger').click();
         }
         
@@ -258,25 +262,6 @@ async function downloadResume() {
     } catch (error) {
         console.error('Error downloading the file', error);
     }
-
-
-
-
-
-/*
-    // Create a hidden anchor element
-    const link = document.createElement('a');
-    link.href = resumePath;
-    link.download = "Asralov, Abror.pdf";  
-    
-    // Append the anchor to the body
-    document.body.appendChild(link);
-    
-    // Programmatically trigger the click event
-    link.click();
-    
-    // Remove the anchor from the document
-    document.body.removeChild(link);*/
 }
 
 closeModalBtn.addEventListener('click', function() {
